@@ -93,5 +93,18 @@ export class Persona {
     this.telefonos.push(telefonos);
   }
 
+  toString(): string {
+    return `Nombre: ${this.getNombre()}
+Apellidos: ${this.getApellidos()}
+Edad: ${this.getEdad()}
+Dni: ${this.getDni()}
+Cumpleaños: ${this.getCumpleaños()}
+Color Favorito: ${this.getColorFavorito()}
+Sexo: ${this.getSexo()}
+Direcciones: ${this.getDirecciones().join(' | ')}
+Mails: ${this.getMails().join(' | ')}
+Telefono: ${this.getTelefonos().join(' | ')}
+Notas: ${this.getNotas()}`
+  }
 
 }

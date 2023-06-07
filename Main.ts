@@ -24,24 +24,15 @@ const persona3 = new Persona('Lucía', 'Rodríguez', 20, '33333333A', new Date (
 
 const personas = [persona1, persona2, persona3];
 
-function mostrarDatosPersona(persona: Persona) {
-  console.log(persona.getNombre());
-  console.log(persona.getApellidos());
-  console.log(persona.getEdad());
-  console.log(persona.getDni());
-  console.log(persona.getCumpleaños());
-  console.log(persona.getColorFavorito());
-  console.log(persona.getSexo());
-  console.log(persona.getDirecciones());
-  console.log(persona.getMails());
-  console.log(persona.getTelefonos());
-  console.log(persona.getNotas());
+function mostrarPersonas(personas: Persona[]) {
+  personas.forEach(persona => {
+    console.log(persona.toString());
+    console.log();
+  });
 }
 
 //mostrar personas en terminal
-personas.forEach(persona => {
-  mostrarDatosPersona(persona);
-});
+mostrarPersonas(personas);
 
 //nuevas dirección, Mail y tel para modificar persona3
 const direccionMod = new Direccion('Calle Colombia', 31, 31, 'Z', '0110', 'Madrid', 'Madrid' );
@@ -64,10 +55,9 @@ function modificarPersona(persona: Persona, newDireccion: Direccion, newMail: Ma
 const personaAModificar = buscarPersonaPorDni(personas, '33333333A');
 if (personaAModificar) {
   modificarPersona(personaAModificar, direccionMod, mailMod, telefonoMod);
+  console.log("----- Cambios aplicados -----");
 }
 
 
 //mostrar los registros con los cambios realizados
-personas.forEach(persona => {
-  mostrarDatosPersona(persona);
-});
+mostrarPersonas(personas);
