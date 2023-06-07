@@ -1,23 +1,23 @@
 //importar los datos que queremos incluir de otras clases
-import {Direccion} from './Direccion';
-import {Telefono} from './Telefono';
-import {Mail} from './Mail';
+import { Direccion } from './Direccion';
+import { Telefono } from './Telefono';
+import { Mail } from './Mail';
 
-export class persona {
-    nombre: string;
-    apellidos: string;
-    edad: number;
-    dni: string;
-    cumpleaños: Date;
-    colorFavorito: string;
-    sexo: string;
-    direcciones: Direccion[];
-    mails: Mail[];
-    telefonos: Telefono[];
-    notas: string;
+export class Persona {
+  nombre: string;
+  apellidos: string;
+  edad: number;
+  dni: string;
+  cumpleaños: Date;
+  colorFavorito: string;
+  sexo: string;
+  direcciones: Direccion[];
+  mails: Mail[];
+  telefonos: Telefono[];
+  notas: string;
 
-//constructor
-constructor(nombre: string, apellidos: string, edad: number, dni: string, cumpleaños: Date,colorFavorito: string, sexo: string, direcciones: Direccion[],mails: Mail[],telefonos: Telefono[], notas: string   ) {
+  //constructor
+  constructor(nombre: string, apellidos: string, edad: number, dni: string, cumpleaños: Date,colorFavorito: string, sexo: string, direcciones: Direccion[],mails: Mail[],telefonos: Telefono[], notas: string   ) {
     this.nombre = nombre
     this.apellidos = apellidos
     this.edad = edad
@@ -32,7 +32,7 @@ constructor(nombre: string, apellidos: string, edad: number, dni: string, cumple
 
   }
 
-//getters
+  //getters
 
   getNombre(): string {
     return this.nombre
@@ -93,8 +93,8 @@ constructor(nombre: string, apellidos: string, edad: number, dni: string, cumple
     this.telefonos.push(telefonos);
   }
 
-//para poder modificar la persona buscando por el dni en la clase main:
-modificarPersona(dni: string, newDireccion: Direccion, newMail: Mail, newTelefono: Telefono){
+  //para poder modificar la persona buscando por el dni en la clase main:
+  modificarPersona(dni: string, newDireccion: Direccion, newMail: Mail, newTelefono: Telefono){
     if (this.dni == dni){ //comparar el dni dado con el dni existente
         this.addDireccion(newDireccion); //cambiar la dirección
         this.addMail(newMail); //cambiar el Mail
@@ -102,6 +102,6 @@ modificarPersona(dni: string, newDireccion: Direccion, newMail: Mail, newTelefon
 
     }
 
-}
+  }
 
 }

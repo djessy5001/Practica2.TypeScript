@@ -1,8 +1,8 @@
 //importar los datos que queremos incluir de otras clases
-import {Direccion} from './Direccion';
-import {Telefono} from './Telefono';
-import {Mail} from './Mail';
-import {Persona} from './Persona';
+import { Direccion } from './Direccion';
+import { Telefono } from './Telefono';
+import { Mail } from './Mail';
+import { Persona } from './Persona';
 
 //primero crearemos los objetos y después las 3 personas con sus correspondientes objetos
 const direccion1 = new Direccion('Calle Sevilla', 1, 1, 'A', '0101', 'Sevilla', 'Sevilla' );
@@ -18,9 +18,9 @@ const telefono3 = new Telefono('móvil', '633333333');
 const mail3 = new Mail('profesional', 'luciarm@empresa.es');
 
 //crear objeto Persona
-const persona1 = new Persona ('Juan', 'Torres', 32, '11111111A', new Date (1991, 1, 15), 'Verde', 'Masculino', [direccion1], [mail1], [telefono1], 'Nota 1');
-const persona2 = new Persona ('María', 'Gómez', 26, '22222222A', new Date (1997, 7, 27), 'Morado', 'Femenino', [direccion2], [mail2], [telefono2], 'Nota 2');
-const persona3 = new Persona ('Lucía', 'Rodríguez', 20, '33333333A', new Date (2003, 8, 24), 'Negro', 'Femenino', [direccion3], [mail3], [telefono3], 'Nota 3');
+const persona1 = new Persona('Juan', 'Torres', 32, '11111111A', new Date (1991, 1, 15), 'Verde', 'Masculino', [direccion1], [mail1], [telefono1], 'Nota 1');
+const persona2 = new Persona('María', 'Gómez', 26, '22222222A', new Date (1997, 7, 27), 'Morado', 'Femenino', [direccion2], [mail2], [telefono2], 'Nota 2');
+const persona3 = new Persona('Lucía', 'Rodríguez', 20, '33333333A', new Date (2003, 8, 24), 'Negro', 'Femenino', [direccion3], [mail3], [telefono3], 'Nota 3');
 
 //mostrar personas en terminal
 //persona1
@@ -63,13 +63,13 @@ console.log(persona3.getTelefonos());
 console.log(persona3.getNotas());
 
 //nuevas dirección, Mail y tel para modificar persona3
-const direccionMod = new Direccion ('Calle Colombia', 31, 31, 'Z', '0110', 'Madrid', 'Madrid' );
-const mailMod = new Mail ('personal', 'luciarodm@egmail.com');
-const telefonoMod = new Telefono ('móvil personal', '711111111');
+const direccionMod = new Direccion('Calle Colombia', 31, 31, 'Z', '0110', 'Madrid', 'Madrid' );
+const mailMod = new Mail('personal', 'luciarodm@egmail.com');
+const telefonoMod = new Telefono('móvil personal', '711111111');
 
 
 //modificar Persona por dni
-persona3.modificarPersona ('33333333A', direccionMod, mailMod, telefonoMod);
+persona3.modificarPersona('33333333A', direccionMod, mailMod, telefonoMod);
 
 //mostrar los registros con los cambios realizados
 //persona1
