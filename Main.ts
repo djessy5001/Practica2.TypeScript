@@ -24,14 +24,13 @@ const persona3 = new Persona('Lucía', 'Rodríguez', 20, '33333333A', new Date (
 
 const personas = [persona1, persona2, persona3];
 
-
 function mostrarDatosPersona(persona: Persona) {
   console.log(persona.getNombre());
   console.log(persona.getApellidos());
   console.log(persona.getEdad());
   console.log(persona.getDni());
   console.log(persona.getCumpleaños());
-  console.log(persona.getColorfavorito());
+  console.log(persona.getColorFavorito());
   console.log(persona.getSexo());
   console.log(persona.getDirecciones());
   console.log(persona.getMails());
@@ -51,44 +50,24 @@ const telefonoMod = new Telefono('móvil personal', '711111111');
 
 
 //modificar Persona por dni
-persona3.modificarPersona('33333333A', direccionMod, mailMod, telefonoMod);
+function buscarPersonaPorDni(personas: Persona[], dni: String): Persona | undefined {
+  return personas.find(persona => persona.getDni() === dni)
+}
+
+//para poder modificar la persona buscando por el dni en la clase main:
+function modificarPersona(persona: Persona, newDireccion: Direccion, newMail: Mail, newTelefono: Telefono) {
+  persona.addDireccion(newDireccion);
+  persona.addMail(newMail);
+  persona.addTelefono(newTelefono);
+}
+
+const personaAModificar = buscarPersonaPorDni(personas, '33333333A');
+if (personaAModificar) {
+  modificarPersona(personaAModificar, direccionMod, mailMod, telefonoMod);
+}
+
 
 //mostrar los registros con los cambios realizados
-//persona1
-console.log(persona1.getNombre());
-console.log(persona1.getApellidos());
-console.log(persona1.getEdad());
-console.log(persona1.getDni());
-console.log(persona1.getCumpleaños());
-console.log(persona1.getColorfavorito());
-console.log(persona1.getSexo());
-console.log(persona1.getDirecciones());
-console.log(persona1.getMails());
-console.log(persona1.getTelefonos());
-console.log(persona1.getNotas());
-
-//persona2
-console.log(persona2.getNombre());
-console.log(persona2.getApellidos());
-console.log(persona2.getDni());
-console.log(persona2.getEdad());
-console.log(persona2.getCumpleaños());
-console.log(persona2.getColorfavorito());
-console.log(persona2.getSexo());
-console.log(persona2.getDirecciones());
-console.log(persona2.getMails());
-console.log(persona2.getTelefonos());
-console.log(persona2.getNotas());
-
-//persona3
-console.log(persona3.getNombre());
-console.log(persona3.getApellidos());
-console.log(persona3.getEdad());
-console.log(persona3.getDni());
-console.log(persona3.getCumpleaños());
-console.log(persona3.getColorfavorito());
-console.log(persona3.getSexo());
-console.log(persona3.getDirecciones());
-console.log(persona3.getMails());
-console.log(persona3.getTelefonos());
-console.log(persona3.getNotas());
+personas.forEach(persona => {
+  mostrarDatosPersona(persona);
+});

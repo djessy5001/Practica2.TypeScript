@@ -54,7 +54,7 @@ export class Persona {
     return this.cumpleaños
   }
 
-  getColorfavorito(): string {
+  getColorFavorito(): string {
     return this.colorFavorito
   }
 
@@ -93,15 +93,5 @@ export class Persona {
     this.telefonos.push(telefonos);
   }
 
-  //para poder modificar la persona buscando por el dni en la clase main:
-  modificarPersona(dni: string, newDireccion: Direccion, newMail: Mail, newTelefono: Telefono){
-    if (this.dni == dni){ //comparar el dni dado con el dni existente
-        this.addDireccion(newDireccion); //cambiar la dirección
-        this.addMail(newMail); //cambiar el Mail
-        this.addTelefono(newTelefono);  //cambiar el teléfono 
-
-    }
-
-  }
 
 }
