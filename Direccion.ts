@@ -19,6 +19,6 @@ export class Direccion { //declaración atributos y métodos sin valores predefi
   }
   //para que se devuelvan los valores en el main craré un getter
   getDireccion(): string {
-      return `${this.calle}, ${this.numero}, ${this.piso}, ${this.letra}, ${this.codigopostal}, ${this.poblacion}, ${this.provincia}`;
+    return `${this.calle}, ${this.numero}, ${this.piso}, ${this.letra}, ${this.codigopostal}, ${this.poblacion}, ${this.provincia}`;
   }
 }
