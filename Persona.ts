@@ -1,7 +1,7 @@
 //importar los datos que queremos incluir de otras clases
-import {direccion} from './direccion';
-import {telefono} from './telefono';
-import {mail} from './mail';
+import {Direccion} from './Direccion';
+import {Telefono} from './Telefono';
+import {Mail} from './Mail';
 
 export class persona {
     nombre: string;
@@ -11,13 +11,13 @@ export class persona {
     cumpleaños: Date;
     colorFavorito: string;
     sexo: string;
-    direcciones: direccion[];
-    mails: mail[];
-    telefonos: telefono[];
+    direcciones: Direccion[];
+    mails: Mail[];
+    telefonos: Telefono[];
     notas: string;
 
 //constructor
-constructor(nombre: string, apellidos: string, edad: number, dni: string, cumpleaños: Date,colorFavorito: string, sexo: string, direcciones: direccion[],mails: mail[],telefonos: telefono[], notas: string   ) {
+constructor(nombre: string, apellidos: string, edad: number, dni: string, cumpleaños: Date,colorFavorito: string, sexo: string, direcciones: Direccion[],mails: Mail[],telefonos: Telefono[], notas: string   ) {
     this.nombre = nombre
     this.apellidos = apellidos
     this.edad = edad
@@ -65,15 +65,15 @@ constructor(nombre: string, apellidos: string, edad: number, dni: string, cumple
   getDirecciones(): string[] {
     //debemos hacer una construcción más compleja para poder obtener la dirección de las otras clases
     //el método .map() lo usamos para iterar en la clase y aplicar una transformación. Devuelve la cadena correspondiente con el getter
-    return this.direcciones.map (direccion => direccion.getdireccion());
+    return this.direcciones.map (direccion => direccion.getDireccion());
   }
 
   getMails(): string[] {
-    return this.mails.map (direccionMail => direccionMail.getmail());
+    return this.mails.map (direccionMail => direccionMail.getMail());
   }
 
   getTelefonos(): string[]{
-    return this.telefonos.map (numeroTel => numeroTel.gettelefono());
+    return this.telefonos.map (numeroTel => numeroTel.getTelefono());
   }
 
   getNotas(): string {
@@ -81,23 +81,23 @@ constructor(nombre: string, apellidos: string, edad: number, dni: string, cumple
   }
 
 // para añadir una dirección a la lista de direcciones de la clase persona:
-  addDireccion(direcciones: direccion) {
+  addDireccion(direcciones: Direccion) {
     this.direcciones.push(direcciones); //.push nos permite agregar un elemento nuevo al final del array
   }
 
-  addMail(mails: mail){
+  addMail(mails: Mail){
     this.mails.push(mails);
   }
 
-  addTelefono(telefonos: telefono){
+  addTelefono(telefonos: Telefono){
     this.telefonos.push(telefonos);
   }
 
 //para poder modificar la persona buscando por el dni en la clase main:
-modificarPersona(dni: string, newDireccion: direccion, newMail: mail, newTelefono: telefono){
+modificarPersona(dni: string, newDireccion: Direccion, newMail: Mail, newTelefono: Telefono){
     if (this.dni == dni){ //comparar el dni dado con el dni existente
         this.addDireccion(newDireccion); //cambiar la dirección
-        this.addMail(newMail); //cambiar el mail
+        this.addMail(newMail); //cambiar el Mail
         this.addTelefono(newTelefono);  //cambiar el teléfono 
 
     }

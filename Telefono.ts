@@ -10,7 +10,7 @@ constructor(tipoTel: string, numeroTel: string) {
     
   }
 //para que se devuelvan los valores en el main craré un getter
-    gettelefono(): string {
+    getTelefono(): string {
         return `${this.tipoTel}, ${this.numeroTel}`;
     }
     

@@ -1,4 +1,4 @@
-export class mail { //declaración atributos y métodos sin valores predefinidos
+export class Mail { //declaración atributos y métodos sin valores predefinidos
     tipoMail: string;
     direccionMail: string;
     
@@ -10,7 +10,7 @@ constructor(tipoMail: string, direccionMail: string) {
     
   }
 //para que se devuelvan los valores en el main craré un getter
-    getmail(): string {
+    getMail(): string {
         return `${this.tipoMail}, ${this.direccionMail}`;
     }
     
